@@ -28,7 +28,7 @@ class UserShow(BaseUser):
     is_onboarded:bool = False
     
     @model_validator(mode='after')
-    def set_is_onboarder(self) -> Self:
+    def set_is_onboarded(self) -> Self:
         if self.init_quiz_result:
             self.is_onboarded = True
         return self
